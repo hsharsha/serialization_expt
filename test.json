@@ -1,0 +1,47 @@
+[
+    {
+        "name" : "PointXY",
+        "type" : "record",
+        "fields" : [
+            {"name" : "x", "type" : "double"},
+            {"name" : "y", "type" : "double"},
+            {"name" : "thetaInRadians", "type" : "double"}
+        ]
+    },
+
+    {
+        "name" : "PointLatLon",
+        "type" : "record",
+        "fields" : [
+            {"name" : "latitude", "type" : "double"},
+            {"name" : "longitude", "type" : "double"},
+            {"name" : "bearingDegrees", "type" : "double"}
+        ]
+    },
+
+    {
+        "name" : "Goal",
+        "type" : "record",
+        "fields" : [
+            {"name" : "targetPointXY", "type" : "PointXY"},
+            {"name" : "targetPointLatLon", "type" : "PointLatLon"},
+            {"name" : "purpose", "type" : "string"}
+        ]
+    },
+
+    {
+        "name" : "Mytable",
+        "type" : "record",
+        "fields" : [
+            {"name" : "typeName", "type" : "string"},
+            {"name" : "createdAtTimeStamp", "type" : "long"},
+            {"name" : "token", "type": "string"},
+            {"name" : "len", "type" : "double"},
+            {"name" : "speed", "type" : "double"},
+            {"name" : "pointXY", "type" : "PointXY"},
+            {"name" : "pointLatLon", "type" : "PointLatLon"},
+            {"name" : "goals", "type" : {"type" : "array", "items" : "Goal"}},
+            {"name" : "state", "type" : "string"}
+        ]
+    }
+]

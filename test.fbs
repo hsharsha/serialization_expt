@@ -1,0 +1,33 @@
+namespace mynamespace;
+
+table Mytable {
+    typeName : string;
+    createdAtTimeStamp : long;
+    token : string;
+    pointXY : PointXY;
+    pointLatLon : PointLatLon;
+    len : double;
+    speed : double;
+    goals : [Goal];
+    state : string;
+}
+
+struct PointXY {
+    y : double;
+    x : double;
+    thetaInRadians : double;
+}
+
+struct PointLatLon {
+    latitude : double;
+    longitude : double;
+    bearingDegrees : double;
+}
+
+table Goal {
+    targetPointXY : PointXY;
+    targetPointLatLon : PointLatLon;
+    purpose : string;
+}
+
+root_type Mytable;
